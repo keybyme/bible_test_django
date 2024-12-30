@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+
+
+{% block content %}
+<form action="" method="post">
+    {% csrf_token %}
+    <button class="btn btn-success" name="prev" value="prev" type="submit">previous</button>
+    <button class="btn btn-primary"  name="next" value="next"  type="submit">next</button>
+</form>
+
+<div class="d-flex justify-content-center align-items-center">
+    <div class="card" style=" ;">
+        <div class="card-body">
+
+
+           
+
+            <h5 class="card-title">{{ book.l_libro_desc }}:{{ chapter.c_capitulo_desc }}</h5>
+            {% for x in contenido %}
+            <p class="card-text">{{ x.numero }}{{ " " }}{{ x.contenido }}</p>
+            {% endfor %}
+            
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}
